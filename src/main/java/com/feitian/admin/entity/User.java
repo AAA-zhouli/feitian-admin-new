@@ -109,6 +109,9 @@ public class User extends BaseEntity {
 	 */
 	@JSONField(format = "yyyy-MM-dd HH:mm:ss")
 	private Date updateTime;
+	private String balance;
+
+	private Integer userType;
 
 	@ManyToMany(cascade = { CascadeType.REFRESH }, fetch = FetchType.LAZY)
 	@JoinTable(name = "tb_user_role", joinColumns = { @JoinColumn(name = "user_id") }, inverseJoinColumns = { @JoinColumn(name = "role_id") })
@@ -234,4 +237,19 @@ public class User extends BaseEntity {
 		this.roles = roles;
 	}
 
+	public String getBalance() {
+		return balance;
+	}
+
+	public void setBalance(String balance) {
+		this.balance = balance;
+	}
+
+	public Integer getUserType() {
+		return userType;
+	}
+
+	public void setUserType(Integer userType) {
+		this.userType = userType;
+	}
 }
