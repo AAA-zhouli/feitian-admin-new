@@ -96,6 +96,25 @@
                          </@shiro.hasPermission>
                         </ul>
                     </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa fa-cog"></i>
+                            <span class="nav-label">档口管理</span>
+                            <span class="fa arrow"></span>
+                        </a>
+                        <ul class="nav nav-second-level">
+                         <@shiro.hasPermission name="wholesalers:recharge:index">
+                            <li>
+                                <a class="J_menuItem" href="${ctx!}/trade/recharge/index">充值管理</a>
+                            </li>
+                         </@shiro.hasPermission>
+                         <@shiro.hasPermission name="wholesalers:capitalflow:index">
+                            <li>
+                                <a class="J_menuItem" href="${ctx!}/admin/capitalflow/index">资金流水</a>
+                            </li>
+                         </@shiro.hasPermission>
+                        </ul>
+                    </li>
                     <li class="line dk"></li>
                 </ul>
             </div>
